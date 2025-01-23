@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+const validationParamId = require("../middlewares/validationParamId");
 const postsController = require("../controllers/postsController");
+
+router.use("/:id", validationParamId);
 
 //index
 router.get("/", postsController.index);
