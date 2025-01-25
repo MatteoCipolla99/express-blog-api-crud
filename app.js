@@ -7,6 +7,7 @@ const postsRouter = require("./routers/postsRouter");
 
 //middleware per i file statici
 app.use(express.static("public"));
+app.use(express.json());
 app.use("/posts", postsRouter);
 
 app.listen(port, () => {

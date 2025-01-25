@@ -10,18 +10,18 @@ router.use("/:id", validationParamId);
 router.get("/", postsController.index);
 
 //show
-router.get("/:id", postsController.show);
+router.get("/:id", validationParamId, postsController.show);
 
 //create
-router.post("/", (req, res) => {});
+router.post("/", postsController.create);
 
 // update
-router.put("/:id", (req, res) => {});
+router.put("/:id",validationParamId, postsController.update);
 
 //modify
-router.patch("/:id", (req, res) => {});
+router.patch("/:id",validationParamId, postsController.modify);
 
 //destroy
-router.delete("/:id", postsController.destroy);
+router.delete("/:id", validationParamId, postsController.destroy);
 
 module.exports = router;
