@@ -90,7 +90,7 @@ const destroy = (req, res) => {
 
   postData.splice(postIndex, 1);
 
-  console.log(postData);
+  console.log(postsData);
 
   res.sendStatus(204);
 };
